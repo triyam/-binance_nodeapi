@@ -25,7 +25,9 @@ app.get("/getValue", async (req, res) => {
       shib = await ticker.SHIBUSDT
       matic = await ticker.MATICUSDT 
 
-      res.json([{"btc": btc},{"eth": eth},{"bnb": bnb},{"shib": shib},{"matic": matic}])
+      crypto_value = ([{name: btc},{eth: eth},{bnb: bnb},{shib: shib},{matic: matic}])
+      json = JSON.stringify(crypto_value)
+      res.json(json)
     })
 })  
 
